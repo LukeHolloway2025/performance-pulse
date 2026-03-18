@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from './authContext';
-import { Login } from './Login'; 
+import { Login } from './Login';
+import logoImg from '/logo.png';
 
 interface Manager {
   id: number;
@@ -192,11 +193,14 @@ function App() {  const { userProfile, isLoading: authLoading } = useAuth();
     <div className="min-h-screen p-6 md:p-12 relative z-10">
       <div className="max-w-7xl mx-auto">
         
-        <div className="mb-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+        <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center text-left gap-4">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">
-              Performance <span className="text-cyan-300">Pulse</span>
-            </h1>
+            <div className="flex items-center gap-3 md:gap-4">
+              <img src={logoImg} alt="Performance Pulse Logo" className="w-10 h-10 md:w-16 md:h-16 drop-shadow-lg" />
+              <h1 className="text-2xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md whitespace-nowrap">
+                Performance <span className="text-cyan-300">Pulse</span>
+              </h1>
+            </div>
             <p className="text-blue-100 mt-2 font-medium">Daily Notification Status Dashboard</p>
           </div>
           <div className="flex flex-col items-center md:items-end bg-black/20 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10">
