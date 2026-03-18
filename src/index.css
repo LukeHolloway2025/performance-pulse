@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth Animated Gradient Background - GPU ACCELERATED */
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  color: #1f2937;
+  position: relative;
+  z-index: 0;
+  overflow-x: hidden;
+}
+
+/* Create an oversized background layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(-45deg, #1e3a8a, #3b82f6, #06b6d4, #312e81);
+  animation: gradientBG 15s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Animate using GPU-accelerated transforms */
+@keyframes gradientBG {
+  0% { transform: translate3d(0%, 0%, 0); }
+  50% { transform: translate3d(15%, 15%, 0); }
+  100% { transform: translate3d(0%, 0%, 0); }
+}
+
+/* Custom staggered fade-in for table rows */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar for the table */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
