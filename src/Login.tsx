@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "./authContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Lock, Eye, EyeOff } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, ArrowLeft } from "lucide-react";
 
 const LoggingInAnimation = () => (
   <motion.div
@@ -57,7 +57,17 @@ export const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6 relative z-10">
-      
+
+      {/* Back Button */}
+      <a
+        href="https://www.rohrmanacademy.com/"
+        className="absolute top-6 left-6 flex items-center gap-2 transition-colors font-medium"
+        style={{ color: "white" }}
+      >
+        <ArrowLeft className="w-5 h-5" />
+        <span>Back</span>
+      </a>
+
       {/* Glassmorphism Card */}
       <div className="bg-white/80 backdrop-blur-xl shadow-2xl rounded-3xl p-8 max-w-md w-full border border-white/40">
         <AnimatePresence mode="wait">
